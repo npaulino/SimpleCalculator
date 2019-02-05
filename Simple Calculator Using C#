@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Simple_Calculator_2
+{
+    class Program
+    {
+        private static void CalculateAll(int x, int y)
+        {
+            int sum, difference, product, quotient;
+
+            sum = x + y;
+            Console.WriteLine($"The Sum = {sum}", sum );
+
+            difference = x - y;
+            Console.WriteLine($"The Difference = {difference}", difference);
+
+            product = x * y;
+            Console.WriteLine($"The Product = {product}", product);
+
+            quotient = x / y;
+            Console.WriteLine($"The Quotient = {quotient}", quotient);
+        }
+
+        static void Main(string[] args)
+        {
+            int x, y;
+            bool exit = false;
+            string tryAgain;
+
+            do
+            {
+                Console.Write("Enter First Number: ");
+                x = Convert.ToInt16(Console.ReadLine());
+                Console.Write("Enter Second Number: ");
+                y = Convert.ToInt16(Console.ReadLine());
+                
+                CalculateAll(x, y);
+
+                Console.Write("Would you like to exit? y/n ");
+                tryAgain = Console.ReadLine();
+
+                if (tryAgain == "y")
+                {
+                    exit = true;
+                }
+                else
+                    exit = false;
+            } while (!exit);
+        }
+    }
+}
